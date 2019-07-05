@@ -57,7 +57,7 @@ class App extends StatelessWidget {
               child: RaisedButton(
                   child: Text("LEARN MORE", style: TextStyle(fontSize: 16)),
                   textColor: Colors.white,
-                  color: Colors.transparent,
+                  color: Color.fromRGBO(11, 120, 17, 1),
                   padding: EdgeInsets.all(15),
                   onPressed: () => {},
                   shape: RoundedRectangleBorder(
