@@ -19,9 +19,14 @@ class CowsProfilePage extends StatelessWidget {
           _CowProfileHeader(
             imagePath: 'assets/images/cow_profile.jpg',
             cowId: cowInfo['id'],
-            cowName: cowInfo['name'],
+            cowSymbol: cowInfo['symbol'],
           ),
-          _CowMiddleBar(cowGenetic: 'H. Friesian', cowStatus: cowInfo['status'], cowBirth: '02/01/2535',),
+          _CowMiddleBar(
+            cowGenetic: 'H. Friesian',
+            cowStatus: cowInfo['status'],
+            cowBirth: '02/01/2535',
+          ),
+          _CowInformation(),
         ],
       ),
       bottomNavigationBar: BottomNavigator(),
@@ -32,9 +37,9 @@ class CowsProfilePage extends StatelessWidget {
 class _CowProfileHeader extends StatelessWidget {
   final String imagePath;
   final String cowId;
-  final String cowName;
+  final String cowSymbol;
 
-  _CowProfileHeader({this.imagePath, this.cowId, this.cowName});
+  _CowProfileHeader({this.imagePath, this.cowId, this.cowSymbol});
 
   Widget build(BuildContext context) {
     final TextStyle headerStyle = new TextStyle(
@@ -58,7 +63,7 @@ class _CowProfileHeader extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.only(top: 3),
-            child: Text(cowName, style: headerStyle),
+            child: Text(cowSymbol, style: TextStyle(fontSize: 30)),
           ),
         ],
       ),
@@ -128,5 +133,106 @@ class _CowMiddleBar extends StatelessWidget {
             ),
           ],
         ));
+  }
+}
+
+class _CowInformation extends StatelessWidget {
+  final TextStyle labelStyle = new TextStyle(
+    fontSize: 18.0,
+    color: Colors.grey[600],
+  );
+
+  final TextStyle infoStyle = new TextStyle(
+    fontSize: 18.0,
+    fontWeight: FontWeight.bold,
+    color: Colors.grey[900],
+  );
+
+  Widget build(BuildContext context) {
+    return Container(
+      child: Column(
+        children: <Widget>[
+          Container(
+            padding: EdgeInsets.only(left: 10, right: 10),
+            child: Row(
+              children: <Widget>[
+                Icon(Icons.info,
+                    color: Theme.of(context).primaryColor, size: 35),
+                Text(
+                  'Information',
+                  style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.grey[600]),
+                )
+              ],
+            ),
+          ),
+          Container(
+            height: 37,
+            margin: EdgeInsets.all(15),
+            decoration: BoxDecoration(
+              border:
+                  Border.all(width: 1.0, color: Theme.of(context).primaryColor),
+              borderRadius: BorderRadius.all(Radius.circular(10.0)),
+            ),
+            child: _CowInfoText(labelText: 'Name', infoText: 'มณีจันทร์'),
+          ),
+          Container(
+            height: 130,
+            margin: EdgeInsets.fromLTRB(15, 0, 15, 0),
+            decoration: BoxDecoration(
+              border:
+                  Border.all(width: 1.0, color: Theme.of(context).primaryColor),
+              borderRadius: BorderRadius.all(Radius.circular(10.0)),
+            ),
+            child: Column(children: <Widget>[
+              Image.asset('assets/images/cow-5.png', height: 50,),
+              _CowInfoText(labelText: 'Father', infoText: 'สุริยา'),
+              _CowInfoText(labelText: 'Mother', infoText: 'วีนัส'),
+            ],)
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _CowInfoText extends StatelessWidget {
+  final String labelText;
+  final String infoText;
+
+  _CowInfoText({this.labelText, this.infoText});
+
+  final TextStyle labelStyle = new TextStyle(
+    fontSize: 18.0,
+    color: Colors.grey[600],
+  );
+
+  final TextStyle infoStyle = new TextStyle(
+    fontSize: 18.0,
+    fontWeight: FontWeight.bold,
+    color: Colors.grey[900],
+  );
+
+  Widget build(BuildContext build) {
+    return Row(
+      children: <Widget>[
+        Padding(
+          padding: EdgeInsets.fromLTRB(15, 5, 10, 5),
+          child: Text(
+            '$labelText:',
+            style: labelStyle,
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.fromLTRB(5, 5, 10, 5),
+          child: Text(
+            '$infoText',
+            style: infoStyle,
+          ),
+        ),
+      ],
+    );
   }
 }
