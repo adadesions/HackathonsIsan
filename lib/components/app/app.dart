@@ -5,7 +5,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Color.fromRGBO(11, 120, 17, 1),
+      color: Theme.of(context).primaryColor,
       child: SafeArea(
           child: Center(
         child: Column(
@@ -34,10 +34,10 @@ class App extends StatelessWidget {
               child: RaisedButton(
                   child: Text("LOGIN TO CHECKMATE",
                       style: TextStyle(fontSize: 16)),
-                  textColor: Color.fromRGBO(11, 120, 17, 1),
+                  textColor: Theme.of(context).primaryColor,
                   color: Colors.white,
                   padding: EdgeInsets.all(15),
-                  onPressed: () => {},
+                  onPressed: () => Navigator.pushReplacementNamed(context, '/main_menu'),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30.0))),
             ),
@@ -45,7 +45,7 @@ class App extends StatelessWidget {
               margin: EdgeInsets.fromLTRB(30, 15, 30, 0),
               child: RaisedButton(
                   child: Text("SIGN UP", style: TextStyle(fontSize: 16)),
-                  textColor: Color.fromRGBO(11, 120, 17, 1),
+                  textColor: Theme.of(context).primaryColor,
                   color: Colors.white,
                   padding: EdgeInsets.all(15),
                   onPressed: () => {},
@@ -57,7 +57,7 @@ class App extends StatelessWidget {
               child: RaisedButton(
                   child: Text("LEARN MORE", style: TextStyle(fontSize: 16)),
                   textColor: Colors.white,
-                  color: Color.fromRGBO(11, 120, 17, 1),
+                  color: Theme.of(context).primaryColor,
                   padding: EdgeInsets.all(15),
                   onPressed: () => {},
                   shape: RoundedRectangleBorder(
