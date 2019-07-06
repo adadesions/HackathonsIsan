@@ -1,3 +1,4 @@
+import 'package:checkmate/components/cows_list/cows_list_page.dart';
 import 'package:checkmate/components/main_menu/menu_page.dart';
 import 'package:flutter/material.dart';
 import 'package:checkmate/components/app/app.dart';
@@ -9,6 +10,7 @@ void main() {
     routes: {
       '/': (context) => App(),
       '/main_menu': (context) => MenuPage(),
+      '/cows_list': (context) => CowsListPage(),
     },
     theme: ThemeData(
       brightness: Brightness.light,

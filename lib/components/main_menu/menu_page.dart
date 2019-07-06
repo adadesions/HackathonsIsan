@@ -1,5 +1,3 @@
-import 'dart:ui' as prefix0;
-
 import 'package:checkmate/components/main_menu/ads.dart';
 import 'package:checkmate/components/main_menu/menu_items.dart';
 import 'package:flutter/material.dart';
