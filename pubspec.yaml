@@ -25,6 +25,8 @@ dependencies:
   cupertino_icons: ^0.1.2
   carousel_pro: ^1.0.0
   flutter_circular_chart: ^0.1.0
+  firebase_storage: ^3.0.2
+  bezier_chart: "^1.0.10"
 
 dev_dependencies:
   flutter_test:

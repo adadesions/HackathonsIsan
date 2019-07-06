@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1053486478774",
+    "firebase_url": "https://hackathon-isan.firebaseio.com",
+    "project_id": "hackathon-isan",
+    "storage_bucket": "hackathon-isan.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1053486478774:android:6583f73591988d84",
+        "android_client_info": {
+          "package_name": "com.example.checkmate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1053486478774-u6pcfteh3psgenml0e44cacn6m7r5htf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtIewqg0P2OaIUWGEteFomlVZTRV4kcso"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1053486478774-u6pcfteh3psgenml0e44cacn6m7r5htf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
