@@ -1,6 +1,8 @@
+import 'package:checkmate/components/heat/heat_list_page.dart';
 import 'package:checkmate/components/main_menu/ads.dart';
 import 'package:checkmate/components/main_menu/menu_items.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 
 class MenuPage extends StatefulWidget {
   @override
@@ -10,6 +12,33 @@ class MenuPage extends StatefulWidget {
 }
 
 class _MenuPageState extends State<MenuPage> {
+  FirebaseMessaging _firebaseMessaging = FirebaseMessaging();
+
+  @override
+  void initState() {
+    super.initState();
+    firebaseCloudMessaging_Listeners();
+  }
+
+  void firebaseCloudMessaging_Listeners() {
+    _firebaseMessaging.getToken().then((token) {
+      print(token);
+    });
+
+    _firebaseMessaging.configure(
+      onMessage: (Map<String, dynamic> message) async {
+        // Navigator.pushNamed(context, '/heat');
+      },
+      onResume: (Map<String, dynamic> message) async {
+        Navigator.pushNamed(context, '/heat');
+
+      },
+      onLaunch: (Map<String, dynamic> message) async {
+        // Navigator.pushNamed(context, '/heat');
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
