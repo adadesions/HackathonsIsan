@@ -1,5 +1,6 @@
 import 'package:checkmate/components/app/bottom_navigator.dart';
 import 'package:checkmate/components/cows_list/cows_statistic.dart';
+import 'package:checkmate/components/cows_list/cows_list.dart';
 import 'package:flutter/material.dart';
 
 class CowsListPage extends StatefulWidget {
@@ -18,7 +19,10 @@ class _CowsListPageState extends State<CowsListPage> {
         title: Text(title.toUpperCase()),
       ),
       body: Column(
-        children: <Widget>[CowsStatistic()],
+        children: <Widget>[
+          CowsStatistic(),
+          CowsList(),
+        ],
       ),
       bottomNavigationBar: BottomNavigator(title: title),
     );

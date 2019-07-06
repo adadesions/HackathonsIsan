@@ -17,11 +17,11 @@ class _CowStatisticState extends State<CowsStatistic> {
     final totallyCow = 100;
     final breededCow = 30;
     final heatingCow = 40;
-    final normallyCow = 20;
+    // final normallyCow = 20;
 
-    final double breeded_percent = 100 * breededCow / totallyCow;
-    final double heatining_percent = 100 * heatingCow / totallyCow;
-    final double normally_percent = 100 - breeded_percent;
+    final double breededPercent = 100 * breededCow / totallyCow;
+    final double heatiningPercent = 100 * heatingCow / totallyCow;
+    final double normallyPercent = 100 - breededPercent;
 
     final String textInHole =
         breededCow.toString() + '/' + heatingCow.toString() + '\n' + '  B/H';
@@ -34,13 +34,13 @@ class _CowStatisticState extends State<CowsStatistic> {
           new CircularStackEntry(
             <CircularSegmentEntry>[
               new CircularSegmentEntry(
-                breeded_percent,
+                breededPercent,
                 Theme.of(context).accentColor,
                 rankKey: 'breeded',
               ),
-              new CircularSegmentEntry(normally_percent, Colors.blueGrey[600],
+              new CircularSegmentEntry(normallyPercent, Colors.blueGrey[600],
                   rankKey: 'normally'),
-              new CircularSegmentEntry(heatining_percent, Colors.orange,
+              new CircularSegmentEntry(heatiningPercent, Colors.orange,
                   rankKey: 'heat')
             ],
             rankKey: 'Cow Statistics',
